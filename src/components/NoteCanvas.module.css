@@ -1,0 +1,20 @@
+.viewport {
+  height: 100%;
+  overflow: auto;
+  overscroll-behavior: contain;
+  /* Keeps note z-index inside the canvas so the trash overlay stays above every note. */
+  isolation: isolate;
+}
+
+.viewport[data-gesture='dragging'] {
+  cursor: grabbing;
+}
+
+.board {
+  position: relative;
+  background-color: #f7f4ee;
+  background-image:
+    linear-gradient(to right, rgb(28 25 23 / 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(28 25 23 / 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+}

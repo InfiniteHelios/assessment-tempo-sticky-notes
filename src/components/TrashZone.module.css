@@ -1,0 +1,22 @@
+.trash {
+  position: absolute;
+  z-index: 1;
+  display: grid;
+  width: 96px;
+  height: 96px;
+  place-items: center;
+  border: 2px dashed #44403c;
+  border-radius: 12px;
+  background: #fff;
+  color: #292524;
+  box-shadow: 0 8px 20px rgb(28 25 23 / 0.16);
+  font-size: 14px;
+  font-weight: 600;
+  pointer-events: none;
+}
+
+.armed {
+  border-color: #b91c1c;
+  background: #fee2e2;
+  color: #991b1b;
+}
