@@ -9,3 +9,6 @@ test-results
 playwright-report
 blob-report
 playwright/.cache
+hierarchy/.gradle
+hierarchy/build
+hierarchy/bin

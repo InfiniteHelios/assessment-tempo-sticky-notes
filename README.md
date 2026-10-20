@@ -1,4 +1,16 @@
-# Sticky Notes
+# Tempo Home Assessment
+
+This repository contains three deliverables:
+
+| Area | Deliverable | Status |
+|---|---|---|
+| Sticky Notes | React and TypeScript desktop application | Implemented and tested |
+| Hierarchy | Kotlin forest filtering implementation and tests | Implemented and tested |
+| SimpleCache | Production code review | Complete against the included reconstructed source |
+
+The original `Hierarchy.kt` contract and `SimpleCache<K, V>` source were not present in the workspace. The hierarchy API and cache source are therefore explicitly reconstructed from the available assessment notes. Their assumptions are documented in the module READMEs and must be reconciled with the employer-provided files before submission.
+
+## Sticky Notes
 
 A desktop single-page sticky-notes canvas. You can create a note at an exact board position and size, drag it, resize it from a corner handle, and delete it by releasing it over the trash zone.
 
@@ -35,7 +47,22 @@ npm test                   # unit and integration together
 npm run test:all           # unit, integration, and e2e
 ```
 
-On October 17, 2026, `npm run test:unit` passed 24 tests, `npm run test:integration` passed 20 tests, and `npm run test:e2e` passed 7 tests in Playwright Chromium. `npm run lint` and `npm run build` also passed.
+On October 20, 2026, `npm test` passed 50 tests across 8 files and `npm run test:e2e` passed 7 tests in Playwright Chromium. `npm run lint` and `npm run build` also passed.
+
+## Hierarchy
+
+The [hierarchy module](hierarchy/README.md) stores a forest as parallel DFS-ordered node ID and depth arrays. Its iterative `filter` retains a node only when the node and all of its ancestors pass the predicate. It preserves the original traversal order and depths, processes independent roots correctly, and does not recurse.
+
+```powershell
+cd hierarchy
+.\gradlew.bat test
+```
+
+On October 20, 2026, the Gradle build passed all 9 hierarchy tests on Java 21, including a 100,000-level hierarchy.
+
+## SimpleCache review
+
+The [production review](simple-cache/CODE_REVIEW.md) identifies expiration without eviction and unlimited admission as release-blocking memory risks. It separates confirmed findings from conditional design risks and includes prioritized recommendations and a verification strategy. The reviewed [cache source](simple-cache/SimpleCache.kt) is a transparent reconstruction because the original assessment source was unavailable.
 
 ## Architecture
 
